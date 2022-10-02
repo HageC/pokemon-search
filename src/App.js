@@ -1,5 +1,7 @@
+import Search from "./components/Search";
+import Pokemon from "./components/Pokemon";
 function App() {
-  return <h1>App</h1>;
+  return <Search />;
 }
 
 export default App;
