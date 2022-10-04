@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Search = () => {
+const Search = ({ setQuery, error }) => {
+  const [value, setValue] = useState("");
   return (
     <>
       <div className="search-container">
@@ -10,9 +11,12 @@ const Search = () => {
         className="search-input"
         type="text"
         placeholder="enter pokemon name"
+        onChange={(e) => setValue(e.target.value)}
       />
 
-      <button className="search-button">Submit</button>
+      <button className="search-button" onClick={() => setQuery(value)}>
+        Submit
+      </button>
     </>
   );
 };
