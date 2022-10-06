@@ -12,6 +12,11 @@ const Search = ({ setQuery, error }) => {
         type="text"
         placeholder="enter pokemon name"
         onChange={(e) => setValue(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            setQuery(value);
+          }
+        }}
       />
 
       <button className="search-button" onClick={() => setQuery(value)}>
